@@ -1,14 +1,20 @@
 # Catalogue of Recipes 
 ## Project Description
 
-Magic-books Inc. is a fictional company based in Germany. They have requested help to build the front-end of an application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions and therefore we decided to build it with React & Redux.
+This project is a React capstone based on a catalogue of recipes. It is not an app to help you make a recipe. It is a catalogue with a browsable list of items that you can filter and have access to the details of one item.
+The webapp has at least 2 types of pages:
 
-- Milestone 1: Basic project structure 
-- Milestone 2: Components and Redux store 
-- Milestone 3: Interactive form 
-- Milestone 4: Category filter 
-- Milestone 5: UI 
-- Milestone 6 (optional): Backend 
+- one page with a list of food items that could be filtered by category;
+- one page for the food item details;
+
+Data was collected from an API from the React application. A catalogue of meals, using [Meals DB](https://www.themealdb.com/api.php)
+
+## Technical requirements of the project
+1. The project is a single page application(SPA) built with React and Redux. 
+2. The data that is retrieved from the API is stored in the Redux store
+3. We filter the data that is retrieve from the API using a Filter stateless component
+4. Every page, the main page and pages for each item, has a unique route within the SPA
+5. The project is deployed and accessible online
 
 ## Catalogue of Recipes Screenshot
 ![Catalogue of recipes](./)
