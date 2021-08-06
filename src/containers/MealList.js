@@ -1,7 +1,11 @@
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Meal from '../components/Meal';
 
-function MealList() {
-  const meals = ['rice', 'stew', 'chicken'];
+function MealList(props) {
+  const { mealsInfo } = props;
+  const { meals } = mealsInfo;
+  console.log(meals);
   return (
     <div>
       <table>
@@ -15,4 +19,12 @@ function MealList() {
   );
 }
 
-export default MealList;
+MealList.propTypes = {
+  mealsInfo: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  mealsInfo: state,
+});
+
+export default connect(mapStateToProps)(MealList);

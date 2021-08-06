@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
+import { createStore } from 'redux';
 import Routes from './Routes';
+import filterReducer from './reducers/filter';
 
+const store = createStore(filterReducer);
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Routes />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root'),
 );
