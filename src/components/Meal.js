@@ -2,15 +2,17 @@ import PropTypes from 'prop-types';
 
 function Meal(props) {
   const { meal } = props;
+  const { strMeal, strMealThumb } = meal;
   return (
     <div className="Meal">
-      {meal}
+      {strMeal}
+      <img src={strMealThumb} alt="Logo" />
     </div>
   );
 }
 
 Meal.propTypes = {
-  meal: PropTypes.string.isRequired,
+  meal: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Meal;
