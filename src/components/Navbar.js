@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import CategoryFilter from './CategoryFilter';
+// import CategoryFilter from './CategoryFilter';
 
 function Navbar() {
   return (
@@ -7,7 +7,7 @@ function Navbar() {
       <div>
         <Link to="/">Meals </Link>
         <Link to="/details">Details</Link>
-        <CategoryFilter />
+        {/* <CategoryFilter /> */}
       </div>
     </div>
   );

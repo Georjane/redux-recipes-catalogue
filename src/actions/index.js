@@ -1,4 +1,4 @@
-const LIST_MEALS = () => ({
+export const LIST_MEALS = () => ({
   type: 'LIST_MEALS',
   meta: {
     type: 'api',
@@ -6,4 +6,7 @@ const LIST_MEALS = () => ({
   },
 });
 
-export default LIST_MEALS();
+export const CHANGE_FILTER = (filter) => ({
+  type: 'CHANGE_FILTER',
+  payload: filter,
+});
