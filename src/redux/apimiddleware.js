@@ -10,12 +10,17 @@ const apiMiddleware = (store) => (next) => (action) => {
   return Promise.all(categories.map((cat) => fetch(apiUrl + cat)))
     .then((responses) => Promise.all(responses.map((res) => res.json())))
     .then((data) => {
+      let i = 0;
       data.forEach((meal) => {
-        (meal.meals).forEach((element) => {
-          meals.push(element);
-        });
+        // (meal.meals).forEach((element) => {
+        //   meals.push(element);
+        // });
+        const subhash = {};
+        subhash[categories[i]] = meal.meals;
+        meals.push(subhash);
+        i += 1;
       });
-      const newAction = { ...action, payload: meals, meals };
+      const newAction = { ...action, payload: meals };
       delete newAction.meta;
       store.dispatch(newAction);
     });

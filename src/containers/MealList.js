@@ -15,12 +15,27 @@ function MealList(props) {
     LIST_MEALS();
   };
 
+  const allMeals = [];
+  meals.forEach((meal) => {
+    // if (Object.keys(meal)[0] === 'Breakfast') {
+    //   console.log(meal.Breakfast);
+    //   (meal.Breakfast).forEach((element) => {
+    //     console.log(element);
+    //   });
+    // }
+    (Object.values(meal)).forEach((element) => {
+      element.forEach((i) => {
+        allMeals.push(i);
+      });
+    });
+  });
+
   return (
     <div>
       <button type="button" onClick={handleFilterChange}>Click</button>
       <table>
         <tbody>
-          {meals.map((meal) => (
+          {allMeals.map((meal) => (
             <Meal meal={meal} key={meal} />
           ))}
         </tbody>
