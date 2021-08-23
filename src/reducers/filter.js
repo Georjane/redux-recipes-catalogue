@@ -11,9 +11,14 @@ const filterReducer = (state = initialState, action) => {
       return newState;
     }
     case 'CHANGE_FILTER':
-      console.log('yes this is me filter reducer');
-      console.log(action.payload);
       return { ...state, filter: action.payload };
+    case 'MEAL_DETAILS': {
+      console.log('yess1');
+      console.log(action.payload);
+      console.log('yess2');
+      const newState = { ...state, mealDetails: action.payload };
+      return newState;
+    }
     default:
       return state;
   }

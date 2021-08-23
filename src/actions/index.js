@@ -10,3 +10,11 @@ export const CHANGE_FILTER = (filter) => ({
   type: 'CHANGE_FILTER',
   payload: filter,
 });
+
+export const MEAL_DETAILS = (id) => ({
+  type: 'MEAL_DETAILS',
+  payload: id,
+  meta: {
+    type: 'api',
+  },
+});
