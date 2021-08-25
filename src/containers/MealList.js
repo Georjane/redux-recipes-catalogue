@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Meal from '../components/Meal';
 import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
-import { foodlogo } from '../images/foodlogo.jpg'
+import foodlogo from '../images/foodlogo2.png';
 
 function MealList(props) {
   const { mealsInfo } = props;
@@ -56,13 +56,13 @@ function MealList(props) {
 
   return (
     <div>
-      <header>
-      <ul>
-        <li><a><img src={foodlogo} alt="foodlogo" /></a></li>
-        <li>
-          <CategoryFilter handleFilterChange={handleFilterChange} />
-        </li>
-      </ul>
+      <header className="nav">
+        <ul>
+          <li><img src={foodlogo} alt="foodlogo" className="foodlogo" /></li>
+          <li>
+            <CategoryFilter handleFilterChange={handleFilterChange} />
+          </li>
+        </ul>
       </header>
       <div className="landingpagediv">
         <h1>Welcome To Our Catalogue of Recipes</h1>

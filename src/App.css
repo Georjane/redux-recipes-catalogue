@@ -1,7 +1,55 @@
 .App {
   text-align: center;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: white;
+}
+
+.nav ul{
+  /* background-color: #3c3a39; */
+  background-color: #212121;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  height: 70px;
+}
+
+.nav ul li {
+  margin: 0 50px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.filtercat select{
+  background-color: #212121;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.main {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/landingpage.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 
 .hideDiv {
   display: none;
+}
+
+.foodlogo {
+  height: 70px;
 }
