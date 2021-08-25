@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Meal from '../components/Meal';
 import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
+import { foodlogo } from '../images/foodlogo.jpg'
 
 function MealList(props) {
   const { mealsInfo } = props;
@@ -14,6 +15,10 @@ function MealList(props) {
 
   const listMeals = (e) => {
     e.preventDefault();
+    const hidden = document.querySelector('div.landingpagediv');
+    hidden.classList.add('hideDiv');
+    console.log(hidden);
+    // onclick hide the click button
     const { LIST_MEALS } = props;
     LIST_MEALS();
   };
@@ -51,7 +56,24 @@ function MealList(props) {
 
   return (
     <div>
-      <CategoryFilter handleFilterChange={handleFilterChange} />
+      <header>
+      <ul>
+        <li><a><img src={foodlogo} alt="foodlogo" /></a></li>
+        <li>
+          <CategoryFilter handleFilterChange={handleFilterChange} />
+        </li>
+      </ul>
+      </header>
+      <div className="landingpagediv">
+        <h1>Welcome To Our Catalogue of Recipes</h1>
+        <p>
+          <i>
+            Order and eat to your heart&apos;s content.
+            <br />
+            Click on the button below to browse through our menus.
+          </i>
+        </p>
+      </div>
       <button type="button" onClick={listMeals}>Click</button>
       <table>
         <tbody>
