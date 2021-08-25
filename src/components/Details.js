@@ -24,10 +24,27 @@ import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 function Details(props) {
   const { location } = props;
   const { aboutProps } = location;
-  console.log(aboutProps);
+  // console.log(aboutProps);
   const { mealsInfo } = props;
-  // const { meals, filter } = mealsInfo;
-  console.log(props);
+  const { mealDetails } = mealsInfo;
+  const { meals } = mealDetails || [];
+  // console.log(meals[0]);
+  // const ingre = [];
+  // let count = 1;
+  // if (meals !== undefined) {
+  //   Object.entries(obj).forEach(element => {
+  //     if (element[0].slice(0, (element[0].length - 1)) === 'strIngredient') {
+  //       console.log(element);
+  //     }
+  //   });
+  //   // if (meals[0][`strIngredient + ${count}`] !== '') {
+  //   //   ingre.push(meals[0][`strIngredient + ${count}`]);
+  //   //   count += 1;
+  //   // }
+  // }
+  // console.log(ingre.length);
+  console.log(mealDetails);
+  // console.log(props);
   console.log(mealsInfo);
   // console.log(filter);
   useEffect(() => {
@@ -42,9 +59,17 @@ function Details(props) {
 
   return (
     <div>
-      <h1>id</h1>
-      <h2>name</h2>
-      <button value={aboutProps} type="button" onClick={handleDetails}>hhh</button>
+      <h1>{aboutProps.mealname}</h1>
+      <img src={aboutProps.image} alt="Logo" />
+      <button value={aboutProps.id} type="button" onClick={handleDetails}>Ingredients</button>
+      <h2>
+        Category:
+        {meals === undefined ? ' ' : meals[0].strCategory}
+      </h2>
+      <h3>
+        Area:
+        {' '}
+      </h3>
     </div>
   );
 }

@@ -1,2 +1,2 @@
-const str = 'Jane is v smart';
-console.log(str.split(' ')[0]);
+obj = {1: 'one', 2: 'two', 3: 'three'}
+console.log(Object.entries(obj))

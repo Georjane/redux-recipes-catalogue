@@ -60,7 +60,11 @@ function MealList(props) {
               <Link
                 to={{
                   pathname: '/details',
-                  aboutProps: meal.idMeal,
+                  aboutProps: {
+                    id: meal.idMeal,
+                    mealname: meal.strMeal,
+                    image: meal.strMealThumb,
+                  },
                 }}
                 key={meal}
               >
@@ -68,9 +72,9 @@ function MealList(props) {
                   <Meal meal={meal} key={meal} />
                 </button>
               </Link>
-              <button type="button" onClick={() => { meal.history.push('/details'); }}>Press</button>
-              <button value={meal.idMeal} type="button" onClick={handleDetails}>{meal.strMeal}</button>
-              <Meal meal={meal} key={meal} />
+              {/* <button type=" onClick={() => { meal.history.push('/details'); }}>Press</button>
+              <button value={meal.idMeal} typen" onClick={handleDetails}>{meal.strMeal}</button>
+              <Meal meal={meal} key={meal} /> */}
             </div>
           ))}
         </tbody>
