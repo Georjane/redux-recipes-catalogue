@@ -2,16 +2,12 @@ import PropTypes from 'prop-types';
 
 function Meal(props) {
   const { meal } = props;
-  const { strMeal, strMealThumb, idMeal } = meal;
-  const handleDetails = (e) => {
-    console.log(e.target.value);
-  };
+  const { strMeal, strMealThumb } = meal;
 
   return (
-    <div className="Meal">
-      {strMeal}
-      <button type="button" value={idMeal} onClick={handleDetails}>{strMeal}</button>
+    <div className="meal">
       <img src={strMealThumb} alt="Logo" />
+      <h2>{strMeal}</h2>
     </div>
   );
 }

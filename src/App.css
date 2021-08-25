@@ -37,13 +37,53 @@ body {
 }
 
 .main {
+  height: 90vh;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-image: url('images/landingpage.jpg');
+  background-image: linear-gradient(#e6646400, #212121), url('images/landingpage.jpeg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  /* background: linear-gradient(#e664641e, #9198e5); */
+}
+
+.main h1 {
+  padding-top: 150px;
+  font-size: 50px;
+  margin-bottom: 0;
+  font-weight: 700px;
+  color: rgba(255, 107, 0, 1);
+  animation-duration: 6s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+      margin-left: 50%;
+      width: 100%;
+  }
+
+  t0 {
+      margin-left: 0%;
+      width: 100%;
+  }
+}
+
+.main p {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 25px;
+  color: white;
+}
+
+.button1 {
+  padding: 6px 18px;
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  background-color: rgba(255, 107, 0, 1);
 }
 
 .hideDiv {
@@ -53,3 +93,41 @@ body {
 .foodlogo {
   height: 70px;
 }
+
+table {
+  margin: auto;
+}
+
+.meal {
+  height: 50vh;
+  background-color: #000000;
+  color: white;
+  border: none;
+}
+
+.hover :hover {
+  /* height: 41vh; */
+  background: orangered;
+}
+
+.meal img{
+  height: 40vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  /* grid-gap: 10px; */
+  /* padding: 10px; */
+}
+
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+    grid-gap: 10px;
+    /* padding: 10px; */
+  }
+}
+
+

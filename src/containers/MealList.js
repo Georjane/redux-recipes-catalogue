@@ -64,18 +64,44 @@ function MealList(props) {
           </li>
         </ul>
       </header>
-      <div className="landingpagediv">
-        <h1>Welcome To Our Catalogue of Recipes</h1>
-        <p>
-          <i>
-            Order and eat to your heart&apos;s content.
-            <br />
-            Click on the button below to browse through our menus.
-          </i>
-        </p>
+      <div className="main landingpagediv">
+        <div className="">
+          <h1>Welcome To Our Catalogue of Recipes</h1>
+          <p>
+            <i>
+              Try it out and eat to your heart&apos;s content.
+              <br />
+              Click on the button below to browse through our recipes.
+            </i>
+          </p>
+          <button className="button1" type="button" onClick={listMeals}>Recipes</button>
+        </div>
       </div>
-      <button type="button" onClick={listMeals}>Click</button>
-      <table>
+      <div className="grid-container">
+        {filteredmeals.map((meal) => (
+          <div key={meal} className="hover">
+            <Link
+              to={{
+                pathname: '/details',
+                aboutProps: {
+                  id: meal.idMeal,
+                  mealname: meal.strMeal,
+                  image: meal.strMealThumb,
+                },
+              }}
+              key={meal}
+            >
+              <button className="meal" value={meal.idMeal} type="button" onClick={handleDetails}>
+                <Meal meal={meal} key={meal} />
+              </button>
+            </Link>
+            {/* <button type=" onClick={() => { meal.history.push('/details'); }}>Press</button>
+                  <button value={meal.idMeal} typen" onClick={handleDetails}>{meal.strMeal}</button>
+                  <Meal meal={meal} key={meal} /> */}
+          </div>
+        ))}
+      </div>
+      {/* <table>
         <tbody>
           {filteredmeals.map((meal) => (
             <div key={meal}>
@@ -90,17 +116,17 @@ function MealList(props) {
                 }}
                 key={meal}
               >
-                <button value={meal.idMeal} type="button" onClick={handleDetails}>
+                <button className="meal" value={meal.idMeal} type="button" onClick={handleDetails}>
                   <Meal meal={meal} key={meal} />
                 </button>
-              </Link>
-              {/* <button type=" onClick={() => { meal.history.push('/details'); }}>Press</button>
-              <button value={meal.idMeal} typen" onClick={handleDetails}>{meal.strMeal}</button>
-              <Meal meal={meal} key={meal} /> */}
-            </div>
+              </Link> */}
+      {/* <button type=" onClick={() => { meal.history.push('/details'); }}>Press</button>
+                <button value={meal.idMeal} typen" onClick={handleDetails}>{meal.strMeal}</button>
+                <Meal meal={meal} key={meal} /> */}
+      {/* </div>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
