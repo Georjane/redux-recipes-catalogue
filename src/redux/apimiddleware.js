@@ -22,9 +22,6 @@ const apiMiddleware = (store) => (next) => (action) => {
       .then((data) => {
         let i = 0;
         data.forEach((meal) => {
-        // (meal.meals).forEach((element) => {
-        //   meals.push(element);
-        // });
           const subhash = {};
           subhash[categories[i]] = meal.meals;
           meals.push(subhash);
