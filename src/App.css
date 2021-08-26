@@ -121,6 +121,13 @@ table {
   /* padding: 10px; */
 }
 
+.grid-container-ingr {
+  display: grid;
+  grid-template-columns: 20vw 20vw;
+  /* grid-gap: 10px; */
+  /* padding: 10px; */
+}
+
 @media only screen and (min-width: 992px) {
   .grid-container {
     display: grid;
@@ -130,4 +137,32 @@ table {
   }
 }
 
+.details {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  /* margin-top: 5vh; */
+}
+
+.details div{
+  width: 50vw;
+}
+
+.details img{
+  margin-top: 10vh;
+}
+
+.view {
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.video {
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+}
 

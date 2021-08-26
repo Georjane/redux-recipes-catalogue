@@ -29,20 +29,21 @@ function Details(props) {
   const { mealDetails } = mealsInfo;
   const { meals } = mealDetails || [];
   // console.log(meals[0]);
-  // const ingre = [];
+  const ingre = [];
   // let count = 1;
-  // if (meals !== undefined) {
-  //   Object.entries(obj).forEach(element => {
-  //     if (element[0].slice(0, (element[0].length - 1)) === 'strIngredient') {
-  //       console.log(element);
-  //     }
-  //   });
-  //   // if (meals[0][`strIngredient + ${count}`] !== '') {
-  //   //   ingre.push(meals[0][`strIngredient + ${count}`]);
-  //   //   count += 1;
-  //   // }
-  // }
-  // console.log(ingre.length);
+  if (meals !== undefined) {
+    Object.entries(meals[0]).forEach((element) => {
+      if (element[0].slice(0, (element[0].length - 1)) === 'strIngredient') {
+        console.log(element);
+        ingre.push(element[1]);
+      }
+    });
+    // if (meals[0][`strIngredient + ${count}`] !== '') {
+    //   ingre.push(meals[0][`strIngredient + ${count}`]);
+    //   count += 1;
+    // }
+  }
+  console.log(ingre.length);
   console.log(mealDetails);
   // console.log(props);
   console.log(mealsInfo);
@@ -55,21 +56,42 @@ function Details(props) {
     // console.log(e.target.value);
     const { MEAL_DETAILS } = props;
     MEAL_DETAILS(e.target.value);
+    const hidden = document.querySelectorAll('h3');
+    hidden.forEach((hide) => {
+      hide.classList.remove('hideDiv');
+    });
   };
 
   return (
-    <div>
-      <h1>{aboutProps.mealname}</h1>
+    <div className="details">
       <img src={aboutProps.image} alt="Logo" />
-      <button value={aboutProps.id} type="button" onClick={handleDetails}>Ingredients</button>
-      <h2>
-        Category:
-        {meals === undefined ? ' ' : meals[0].strCategory}
-      </h2>
-      <h3>
-        Area:
-        {' '}
-      </h3>
+      <div>
+        <h1>{aboutProps.mealname}</h1>
+        <button className="view" value={aboutProps.id} type="button" onClick={handleDetails}>Click to View Ingredients and Instructions</button>
+        <a className="video" href={meals === undefined ? ' ' : meals[0].strYoutube}>
+          See Video
+        </a>
+        <h3 className="hideDiv">
+          Category:
+          {' '}
+          {meals === undefined ? ' ' : meals[0].strCategory}
+        </h3>
+        <h3 className="hideDiv">
+          Area:
+          {' '}
+          {meals === undefined ? ' ' : meals[0].strArea}
+        </h3>
+        <h3 className="hideDiv">Ingredients</h3>
+        <ol className="grid-container-ingr">
+          {ingre.map((ingr) => (
+            <li key={ingr}>{ingr}</li>
+          ))}
+        </ol>
+        <h3 className="hideDiv">Instructions</h3>
+        <p>
+          {meals === undefined ? ' ' : meals[0].strInstructions}
+        </p>
+      </div>
     </div>
   );
 }
