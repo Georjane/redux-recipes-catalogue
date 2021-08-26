@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function CategoryFilter(props) {
   const { handleFilterChange } = props;
   console.log(props);
-  const categories = ['CATEGORIES', 'All', 'Starter', 'Vegan', 'Breakfast'];
+  const categories = ['CATEGORIES', 'All', 'Beef', 'Chicken', 'Dessert', 'Pasta', 'Pork', 'Seafood', 'Vegan', 'Breakfast'];
 
   const handleFilter = (e) => {
     const newFilter = e.target.value;

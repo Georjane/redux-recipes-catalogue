@@ -1,27 +1,34 @@
 import { connect } from 'react-redux';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Meal from '../components/Meal';
-import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
+import {
+  LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS,
+} from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 import foodlogo from '../images/foodlogo2.png';
 
 function MealList(props) {
   const { mealsInfo } = props;
   const { meals, filter } = mealsInfo;
+  const filteredmeals = [];
   console.log(props);
   // console.log(meals);
   // console.log(filter);
-
-  const listMeals = (e) => {
-    e.preventDefault();
-    const hidden = document.querySelector('div.landingpagediv');
-    hidden.classList.add('hideDiv');
-    console.log(hidden);
-    // onclick hide the click button
+  useEffect(() => {
     const { LIST_MEALS } = props;
     LIST_MEALS();
-  };
+  }, []);
+  // const listMeals = (e) => {
+  //   e.preventDefault();
+  //   const hidden = document.querySelector('div.landingpagediv');
+  //   hidden.classList.add('hideDiv');
+  //   console.log(hidden);
+  //   // onclick hide the click button
+  //   const { LIST_MEALS } = props;
+  //   LIST_MEALS();
+  // };
 
   const handleFilterChange = (newFilter) => {
     // console.log(newFilter);
@@ -29,13 +36,12 @@ function MealList(props) {
     CHANGE_FILTER(newFilter);
   };
 
-  const handleDetails = (e) => {
-    // console.log(e.target.value);
-    const { MEAL_DETAILS } = props;
-    MEAL_DETAILS(e.target.value);
-  };
+  // const handleDetails = (e) => {
+  //   // console.log(e.target.value);
+  //   const { MEAL_DETAILS } = props;
+  //   MEAL_DETAILS(e.target.value);
+  // };
   // const allMeals = [];
-  const filteredmeals = [];
 
   meals.forEach((meal) => {
     if (Object.keys(meal)[0] === filter) {
@@ -69,12 +75,12 @@ function MealList(props) {
           <h1>Welcome To Our Catalogue of Recipes</h1>
           <p>
             <i>
-              Try it out and eat to your heart&apos;s content.
+              Choose a recipe, try it out and eat to your heart&apos;s content.
               <br />
-              Click on the button below to browse through our recipes.
+              We bring you the best recipes from around the world! Enjoy as you browse through below
             </i>
           </p>
-          <button className="button1" type="button" onClick={listMeals}>Recipes</button>
+          {/* <button className="button1" type="button" onClick={listMeals}>Recipes</button> */}
         </div>
       </div>
       <div className="grid-container">
@@ -91,7 +97,7 @@ function MealList(props) {
               }}
               key={meal}
             >
-              <button className="meal" value={meal.idMeal} type="button" onClick={handleDetails}>
+              <button className="meal" value={meal.idMeal} type="button">
                 <Meal meal={meal} key={meal} />
               </button>
             </Link>
@@ -137,7 +143,7 @@ MealList.propTypes = {
   // 'history.push': PropTypes.objectOf(PropTypes.any).isRequired,
   LIST_MEALS: PropTypes.func.isRequired,
   CHANGE_FILTER: PropTypes.func.isRequired,
-  MEAL_DETAILS: PropTypes.func.isRequired,
+  // MEAL_DETAILS: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

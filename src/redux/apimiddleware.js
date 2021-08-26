@@ -14,7 +14,7 @@ const apiMiddleware = (store) => (next) => (action) => {
       });
   }
   if (action.type !== 'MEAL_DETAILS') {
-    const categories = ['Starter', 'Vegan', 'Breakfast'];
+    const categories = ['Beef', 'Chicken', 'Dessert', 'Pasta', 'Pork', 'Seafood', 'Vegan', 'Breakfast'];
     const apiUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
     const meals = [];
     return Promise.all(categories.map((cat) => fetch(apiUrl + cat)))

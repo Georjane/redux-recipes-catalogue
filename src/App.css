@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-  height: 85vh;
+  height: 50vh;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -62,7 +62,7 @@ body {
 
 @keyframes slide {
   from {
-    margin-left: 50%;
+    margin-left: 70%;
     width: 100%;
   }
 
@@ -114,6 +114,11 @@ table {
 
 .meal img {
   height: 40vh;
+}
+
+.meal h2,
+.hover {
+  text-decoration: none;
 }
 
 .grid-container {

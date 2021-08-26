@@ -19,13 +19,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 
 function Details(props) {
   const { location } = props;
   const { aboutProps } = location;
-  // console.log(aboutProps);
+  console.log(aboutProps);
   const { mealsInfo } = props;
   const { mealDetails } = mealsInfo;
   const { meals } = mealDetails || [];
@@ -51,50 +51,39 @@ function Details(props) {
   console.log(mealsInfo);
   // console.log(filter);
   useEffect(() => {
-    MEAL_DETAILS(aboutProps);
-  });
-
-  const handleDetails = (e) => {
-    // console.log(e.target.value);
     const { MEAL_DETAILS } = props;
-    MEAL_DETAILS(e.target.value);
-    const hidden = document.querySelectorAll('h3');
-    hidden.forEach((hide) => {
-      hide.classList.remove('hideDiv');
-    });
-  };
+    MEAL_DETAILS(aboutProps.id);
+  }, []);
 
   return (
     <div className="details">
       <img src={aboutProps.image} alt="Logo" />
       <div>
         <h1>{aboutProps.mealname}</h1>
-        <button className="view" value={aboutProps.id} type="button" onClick={handleDetails}>Click to View Ingredients and Instructions</button>
         <a className="video" href={meals === undefined ? ' ' : meals[0].strYoutube}>
           See Video
         </a>
-        <h3 className="hideDiv">
+        <h3>
           Category:
           {' '}
           {meals === undefined ? ' ' : meals[0].strCategory}
         </h3>
-        <h3 className="hideDiv">
+        <h3>
           Area:
           {' '}
           {meals === undefined ? ' ' : meals[0].strArea}
         </h3>
-        <h3 className="hideDiv">Ingredients</h3>
+        <h3>Ingredients</h3>
         <ol className="grid-container-ingr">
           {ingre.map((ingr) => (
             <li key={ingr}>{ingr}</li>
           ))}
         </ol>
-        <h3 className="hideDiv">Instructions</h3>
+        <h3>Instructions</h3>
         <p>
           {meals === undefined ? ' ' : meals[0].strInstructions}
         </p>
         <button type="button" onClick={() => history.goBack()}>Go Back</button>
-        <Link to="/">Meals </Link>
       </div>
     </div>
   );
