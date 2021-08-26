@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-  /* height: 85vh; */
+  height: 85vh;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -67,7 +67,7 @@ body {
   }
 
   to {
-    margin-left: 0%;
+    margin-left: 5%;
     width: 100%;
   }
 }

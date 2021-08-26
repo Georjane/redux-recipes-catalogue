@@ -19,7 +19,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 
 function Details(props) {
@@ -94,6 +94,7 @@ function Details(props) {
           {meals === undefined ? ' ' : meals[0].strInstructions}
         </p>
         <button type="button" onClick={() => history.goBack()}>Go Back</button>
+        <Link to="/">Meals </Link>
       </div>
     </div>
   );
