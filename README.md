@@ -17,7 +17,8 @@ Data was collected from an API from the React application. A catalogue of meals,
 5. The project is deployed and accessible online
 
 ## Catalogue of Recipes Screenshot
-![Catalogue of recipes](./)
+![Catalogue of recipes](https://user-images.githubusercontent.com/60772732/130998103-18b0bb1d-6981-47b1-b7fe-c998c68be0de.png)
+
 
 ## Live Link on Heroku
 - [Catalogue of Recipes](https://redux-recipes-catalogue.herokuapp.com/)
