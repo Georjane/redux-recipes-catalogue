@@ -19,6 +19,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { LIST_MEALS, CHANGE_FILTER, MEAL_DETAILS } from '../actions/index';
 
 function Details(props) {
@@ -31,6 +32,7 @@ function Details(props) {
   // console.log(meals[0]);
   const ingre = [];
   // let count = 1;
+  const history = useHistory();
   if (meals !== undefined) {
     Object.entries(meals[0]).forEach((element) => {
       if (element[0].slice(0, (element[0].length - 1)) === 'strIngredient') {
@@ -91,6 +93,7 @@ function Details(props) {
         <p>
           {meals === undefined ? ' ' : meals[0].strInstructions}
         </p>
+        <button type="button" onClick={() => history.goBack()}>Go Back</button>
       </div>
     </div>
   );
