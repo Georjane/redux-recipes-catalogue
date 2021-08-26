@@ -2,37 +2,163 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav ul {
+  background-color: #212121;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  height: 70px;
 }
 
-@keyframes App-logo-spin {
+.nav ul li {
+  margin: 0 50px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.filtercat select {
+  background-color: #212121;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.main {
+  height: 50vh;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(#e6646400, #212121), url('images/landingpage.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.main h1 {
+  padding-top: 150px;
+  font-size: 50px;
+  margin-bottom: 0;
+  font-weight: bolder;
+  color: rgba(255, 107, 0, 1);
+  animation-duration: 6s;
+  animation-name: slide;
+}
+
+@keyframes slide {
   from {
-    transform: rotate(0deg);
+    margin-left: 70%;
+    width: 100%;
   }
+
   to {
-    transform: rotate(360deg);
+    margin-left: 5%;
+    width: 100%;
   }
+}
+
+.main p {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 25px;
+  color: white;
+}
+
+.button1 {
+  padding: 6px 18px;
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  background-color: rgba(255, 107, 0, 1);
+}
+
+.hideDiv {
+  display: none;
+}
+
+.foodlogo {
+  height: 70px;
+}
+
+table {
+  margin: auto;
+}
+
+.meal {
+  height: 50vh;
+  background-color: #000;
+  color: white;
+  border: none;
+}
+
+.hover :hover {
+  background: orangered;
+}
+
+.meal img {
+  height: 40vh;
+}
+
+.meal h2,
+.hover {
+  text-decoration: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.grid-container-ingr {
+  display: grid;
+  grid-template-columns: 20vw 20vw;
+}
+
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+    grid-gap: 10px;
+  }
+}
+
+.details {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.details div {
+  width: 50vw;
+}
+
+.details img {
+  margin-top: 10vh;
+}
+
+.view {
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.video {
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
 }
