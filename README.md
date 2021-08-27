@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Catalogue of Recipes 
+## Project Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React capstone based on a catalogue of recipes. It is not an app to help you make a recipe. It is a catalogue with a browsable list of items that you can filter and have access to the details of one item.
+The webapp has at least 2 types of pages:
 
-## Available Scripts
+- one page with a list of food items that could be filtered by category;
+- one page for the food item details;
 
-In the project directory, you can run:
+Data was collected from an API from the React application. A catalogue of meals, using [Meals DB](https://www.themealdb.com/api.php)
 
-### `yarn start`
+## Technical requirements of the project
+1. The project is a single page application(SPA) built with React and Redux. 
+2. The data that is retrieved from the API is stored in the Redux store
+3. We filter the data that is retrieve from the API using a Filter stateless component
+4. Every page, the main page and pages for each item, has a unique route within the SPA
+5. The project is deployed and accessible online
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Catalogue of Recipes Screenshot
+![Catalogue of recipes](https://user-images.githubusercontent.com/60772732/130998103-18b0bb1d-6981-47b1-b7fe-c998c68be0de.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Live Link on Heroku
+- [Catalogue of Recipes](https://redux-recipes-catalogue.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tools used
+- Node.js
+- React
+- React-DOM
+- React-Create-App
+- Heroku
+- npm
+- CSS
+- ES6
+- HTML
+- JavaScript
+- Redux
 
-### `yarn build`
+## Getting Started
+To get a local copy of the repository please run the following commands on your terminal:
+```
+$ git clone https://github.com/Georjane/redux-recipes-catalogue.git
+$ cd redux-recipes-catalogue
+$ npm start
+$ Open localhost:3000 in your browser if it doesn't open automatically
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run Tests
+```
+$ npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Author
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Witah Georjane
+* Github: [@Georjane](https://github.com/Georjane)
+* Twitter: [@WittyJany](https://twitter.com/WittyJany)
+* LinkedIn: [Witah Georjane](https://www.linkedin.com/in/witah-georjane)
 
-### `yarn eject`
+## Contributing
+There are two ways of contributing to this project:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. If you see something wrong or not working, please open the issue in issue section
+2. If you see something to improve or to correct, and you have a solution to that, follow the below steps to contribute:
+    1. Fork this repository
+    2. Clone it on your local computer by running `git clone https://github.com/Georjane/redux-recipes-catalogue.git` __Replace *your username* with the username you use on github__
+    3. Open the cloned repository which appears as a folder on your local computer with your favorite code editor
+    4. Create a separate branch off the *master branch*,
+    5. Write your codes which fix the issue you found
+    6. Commit and push the branch you created
+    7. Open a pull request, comparing your new created branch with our original master branch [here](https://github.com/Georjane/redux-recipes-catalogue/pulls)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Show your support
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Give a ⭐️ if you like this project!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Design Inspiration
+- Design idea by [Marc-Antoine Roy on Behance](https://www.behance.net/enfantroy)
+- All design inspiration info can be found [here](https://www.behance.net/gallery/11351281/NomNom)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgment
+* [Microverse](https://www.microvese.org)
+* [The Odin Project](https://www.theodinproject.com)
