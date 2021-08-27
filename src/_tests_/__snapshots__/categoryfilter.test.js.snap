@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App page 1`] = `
+<div
+  className="filtercat"
+>
+  <p>
+    <label
+      htmlFor="cat"
+    >
+      Choose
+    </label>
+    <select
+      className="form-control"
+      id="cat"
+      onChange={[Function]}
+    >
+      <option>
+        CATEGORIES
+      </option>
+      <option>
+        All
+      </option>
+      <option>
+        Beef
+      </option>
+      <option>
+        Chicken
+      </option>
+      <option>
+        Dessert
+      </option>
+      <option>
+        Pasta
+      </option>
+      <option>
+        Pork
+      </option>
+      <option>
+        Seafood
+      </option>
+      <option>
+        Vegan
+      </option>
+      <option>
+        Breakfast
+      </option>
+    </select>
+  </p>
+</div>
+`;

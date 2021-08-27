@@ -59,7 +59,7 @@ function MealList(props) {
           </p>
         </div>
       </div>
-      <div className="grid-container">
+      <div data-testid="gridcon" className="grid-container">
         {filteredmeals.map((meal) => (
           <div key={meal} className="hover">
             <Link
