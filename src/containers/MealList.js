@@ -61,7 +61,7 @@ function MealList(props) {
       </div>
       <div data-testid="gridcon" className="grid-container">
         {filteredmeals.map((meal) => (
-          <div key={meal} className="hover">
+          <div key={meal.idMeal} className="hover">
             <Link
               to={{
                 pathname: '/details',
@@ -71,10 +71,10 @@ function MealList(props) {
                   image: meal.strMealThumb,
                 },
               }}
-              key={meal}
+              // key={meal}
             >
               <button className="meal" value={meal.idMeal} type="button">
-                <Meal meal={meal} key={meal} />
+                <Meal meal={meal} />
               </button>
             </Link>
           </div>

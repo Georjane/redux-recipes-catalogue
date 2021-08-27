@@ -13,14 +13,16 @@ function CategoryFilter(props) {
   return (
     <div className="filtercat">
       <p>
-        <label htmlFor="cat">Choose</label>
-        <select
-          className="form-control"
-          id="cat"
-          onChange={handleFilter}
-        >
-          { categories.map((category) => <option key={category}>{category}</option>)}
-        </select>
+        <label htmlFor="cat">
+          Choose
+          <select
+            className="form-control"
+            id="cat"
+            onChange={handleFilter}
+          >
+            { categories.map((category) => <option key={category}>{category}</option>)}
+          </select>
+        </label>
       </p>
     </div>
 
