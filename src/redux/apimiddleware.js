@@ -7,7 +7,6 @@ const apiMiddleware = (store) => (next) => (action) => {
     fetch(url + action.payload)
       .then((response) => response.json())
       .then((data) => {
-        console.log('ok');
         const newActions = { ...action, payload: data };
         delete newActions.meta;
         return store.dispatch(newActions);
