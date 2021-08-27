@@ -1,1 +1,0 @@
-console.log(('jane   car').replace(/  +/g, ''));
